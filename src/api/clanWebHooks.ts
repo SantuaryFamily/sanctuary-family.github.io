@@ -1,6 +1,7 @@
 export const clans = {
-	dragon: '967637489311440896/XAar-5Pz8r1E3K8lvOOxe8RI3jPeADodx71kLZS4tTCmXrYfZJnHK3T-axh1s7Yn9ryb',
+	// dragon: '967637489311440896/XAar-5Pz8r1E3K8lvOOxe8RI3jPeADodx71kLZS4tTCmXrYfZJnHK3T-axh1s7Yn9ryb',
 	magic: '993359080477442088/ZjvbFPhIgIkbhhoFqp1jAXgf_IS-vUAkwK2NY0EaNKpzvNv4mxAh8L289BhVAiQV9O4q',
+	second: '993507987119427644/_pRvKUfuECXhwU05aWB8vpS2Kr6MQMNkkVbLmutWn-OKEXcSC--s2GP-YSHEpa9mgn0_',
 }
 
 export type Clan = keyof typeof clans

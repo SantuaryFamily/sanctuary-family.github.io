@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { Container, Row } from 'react-grid-system'
-import { Formik, Form } from 'formik'
+import { Formik, Form, FormikHelpers } from 'formik'
 import './assignments.scss'
 import { RaidTeams, TeamLanes } from './components/TeamInputs'
 import { Button, Error } from '../../../components'
 import { raid } from '../../../api'
 import { TeamFields } from './components/TeamFields'
+import { OptionSelect } from '../../../components/OptionSelect/OptionSelect'
+import { Clan, clans } from '../../../api/clanWebHooks'
 
 export const Assignments = () => {
 	const [error, setError] = useState<string | undefined>()
@@ -15,34 +17,34 @@ export const Assignments = () => {
 		team3: initialTeamValues,
 	}
 
+	const clansNames = Object.keys(clans) as Array<Clan>
+	const [clan, setClan] = useState<Clan>(clansNames[0])
+
+	const handleClanChange = (clan: string) => {
+		setClan(clan as Clan)
+	}
+
+	const handleSubmit = async (values: RaidTeams, actions: FormikHelpers<RaidTeams>) => {
+		actions.setSubmitting(true)
+		const hasValue = validate(values)
+		if (!hasValue) {
+			setError('Please fill out all Lanes')
+			return
+		}
+		raid.assign(clan, values)
+			.then((res) => actions.resetForm())
+			.catch((err) => setError(err?.response?.data?.message))
+			.finally(() => actions.setSubmitting(false))
+	}
+
 	return (
 		<div className='assignments'>
 			<h1>Lane Assignments</h1>
-			<Formik
-				initialValues={initialValues}
-				onSubmit={(values, actions) => {
-					actions.setSubmitting(true)
-					const hasValue = validate(values)
-					if (hasValue) {
-						raid.test(values)
-							.then((res) => {
-								console.log('response', res)
-								actions.resetForm()
-							})
-							.catch((err) => {
-								console.log('error', err)
-								setError(err?.response?.data?.message)
-							})
-							.finally(() => {
-								actions.setSubmitting(false)
-							})
-					} else {
-						setError('Please fill out all Lanes')
-					}
-				}}>
+			<Formik initialValues={initialValues} onSubmit={handleSubmit}>
 				{({ errors, values }) => (
 					<Form>
 						<Container>
+							<OptionSelect value={clan} options={clansNames} onChange={handleClanChange} />
 							<Row>
 								<TeamFields errors={errors} values={values} team='team1' />
 								<TeamFields errors={errors} values={values} team='team2' />
