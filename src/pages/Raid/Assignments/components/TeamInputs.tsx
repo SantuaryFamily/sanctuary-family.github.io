@@ -1,5 +1,5 @@
 import { FormikErrors } from 'formik'
-import { Input } from '../../../components'
+import { Input } from '../../../../components'
 
 type Lane = 'lane1' | 'lane2' | 'lane3' | 'lane4' | 'lane5' | 'lane6' | 'lane7' | 'lane8' | 'lane9' | 'lane10'
 export type Team = 'team1' | 'team2' | 'team3'

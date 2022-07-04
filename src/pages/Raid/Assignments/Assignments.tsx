@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { Container, Row } from 'react-grid-system'
 import { Formik, Form } from 'formik'
-import './raid.scss'
+import './assignments.scss'
 import { RaidTeams, TeamLanes } from './components/TeamInputs'
-import { Button, Error } from '../../components'
-import { raid } from '../../api'
+import { Button, Error } from '../../../components'
+import { raid } from '../../../api'
 import { TeamFields } from './components/TeamFields'
 
-export const Raid = () => {
+export const Assignments = () => {
 	const [error, setError] = useState<string | undefined>()
 	const initialValues: RaidTeams = {
 		team1: initialTeamValues,
@@ -16,7 +16,7 @@ export const Raid = () => {
 	}
 
 	return (
-		<div className='raids'>
+		<div className='assignments'>
 			<h1>Lane Assignments</h1>
 			<Formik
 				initialValues={initialValues}

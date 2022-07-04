@@ -1,9 +1,11 @@
+export type Route = '/' | 'raid/assignments' | 'raid/maps'
+
 export type NavigationItem = LinkItem & {
 	children?: Array<LinkItem>
 	icon?: string
 }
 
 export type LinkItem = {
-	to: string
+	to: Route
 	title: string
 }

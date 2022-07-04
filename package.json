@@ -2,6 +2,7 @@
   "name": "sanctuary-family.github.io",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://santuaryfamily.github.io/sanctuary-family.github.io/",
   "dependencies": {
     "formik": "^2.2.9",
     "node-sass": "^7.0.1",

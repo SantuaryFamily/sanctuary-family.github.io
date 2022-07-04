@@ -1,4 +1,4 @@
-import { RaidTeams } from "../pages/Raid/components/TeamInputs"
+import { RaidTeams } from "../pages/Raid/Assignments/components/TeamInputs"
 import { formatTeams, toTitleCase } from "../utils"
 import { Clan } from "./clanWebHooks"
 import { WebhookBody } from "./webhook.types"

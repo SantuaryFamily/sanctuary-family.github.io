@@ -1,6 +1,6 @@
 import { FormikErrors } from 'formik'
 import { Col } from 'react-grid-system'
-import { toTitleCase } from '../../../utils'
+import { toTitleCase } from '../../../../utils'
 import { RaidTeams, Team, TeamInputs } from './TeamInputs'
 
 export type TeamFieldProps = {
