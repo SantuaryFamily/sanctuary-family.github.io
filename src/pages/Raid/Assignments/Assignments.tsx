@@ -50,6 +50,7 @@ export const Assignments = () => {
 								<TeamFields errors={errors} values={values} team='team2' />
 								<TeamFields errors={errors} values={values} team='team3' />
 							</Row>
+							<br />
 							<Button>Send to Discord</Button>
 							<br />
 							{error && <Error>{error}</Error>}

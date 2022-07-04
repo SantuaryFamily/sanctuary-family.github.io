@@ -5,9 +5,9 @@ export const config: Array<NavigationItem> = [
 	{
 		title: 'Raids',
 		to: 'raid/assignments',
-		children: [
-			{ title: 'Assignments', to: 'raid/assignments' },
-			{ title: 'Maps', to: 'raid/maps' },
-		],
+		// children: [
+		// 	{ title: 'Assignments', to: 'raid/assignments' },
+		// 	{ title: 'Maps', to: 'raid/maps' },
+		// ],
 	},
 ]

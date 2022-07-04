@@ -1,0 +1,27 @@
+@import '../../styles/index.scss';
+
+$select-width: 220px;
+$select-height: 40px;
+
+.label {
+    font-size: 22px;
+    color: $text-color;
+    font-family: $font-family_1;
+}
+
+.options-container {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    color: $text-color;
+    width: $select-width;
+    height: $select-height;
+    background-color: $transparent-background;
+    font-family: $font-family_1;
+    border-width: 0;
+
+    &:hover {
+        background: darken($transparent-background, 5);
+    }
+}

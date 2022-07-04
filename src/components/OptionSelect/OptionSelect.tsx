@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import styles from './optionSelect.module.scss'
 
 interface Props {
 	options: string[]
@@ -12,12 +12,16 @@ export const OptionSelect = ({ options, value, onChange }: Props) => {
 	}
 
 	return (
-		<select className='form-control' id={value} value={value} onChange={handleChange}>
-			{options.map((o, i) => (
-				<option value={o} selected={o === options[i]}>
-					{o}
-				</option>
-			))}
-		</select>
+		<div>
+			<span className={styles['label']}>Select a Clan</span>
+			<br />
+			<select className={styles['options-container']} id={value} value={value} onChange={handleChange}>
+				{options.map((o, i) => (
+					<option value={o} selected={o === options[i]}>
+						{o}
+					</option>
+				))}
+			</select>
+		</div>
 	)
 }

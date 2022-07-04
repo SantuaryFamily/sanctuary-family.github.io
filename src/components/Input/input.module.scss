@@ -10,6 +10,7 @@
     display: flex;
     flex: 1;
 
+
     .placeholder {
         display: flex;
         flex: 1;
@@ -27,6 +28,7 @@
         font-size: 22px;
         font-family: $font-family_1;
         border: 1px solid transparent;
+        font-weight: 600 !important;
 
         &:focus {
             outline: 0;
