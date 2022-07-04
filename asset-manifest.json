@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.77b12bb1.css",
-    "main.js": "/static/js/main.213c046e.js",
-    "static/media/Lore.png": "/static/media/Lore.53e93998fc2d88b7de1f.png",
-    "service-worker.js": "/service-worker.js",
-    "index.html": "/index.html",
-    "main.77b12bb1.css.map": "/static/css/main.77b12bb1.css.map",
-    "main.213c046e.js.map": "/static/js/main.213c046e.js.map"
+    "main.css": "/sanctuary-family.github.io/static/css/main.ab40f79a.css",
+    "main.js": "/sanctuary-family.github.io/static/js/main.8269068a.js",
+    "static/media/Lore.png": "/sanctuary-family.github.io/static/media/Lore.53e93998fc2d88b7de1f.png",
+    "service-worker.js": "/sanctuary-family.github.io/service-worker.js",
+    "index.html": "/sanctuary-family.github.io/index.html",
+    "main.ab40f79a.css.map": "/sanctuary-family.github.io/static/css/main.ab40f79a.css.map",
+    "main.8269068a.js.map": "/sanctuary-family.github.io/static/js/main.8269068a.js.map"
   },
   "entrypoints": [
-    "static/css/main.77b12bb1.css",
-    "static/js/main.213c046e.js"
+    "static/css/main.ab40f79a.css",
+    "static/js/main.8269068a.js"
   ]
 }
