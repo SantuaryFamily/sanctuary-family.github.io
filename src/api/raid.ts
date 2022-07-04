@@ -16,9 +16,30 @@ const instance = axios.create({
 
 instance.defaults.headers.post['Content-Type'] = 'application/json'
 
+// const options = {
+// 	method: 'POST',
+// 	body: JSON.stringify(user),
+// 	headers: {
+// 		'Content-Type': 'application/json',
+// 	},
+// }
+
+const post = async (url: string, body: WebhookBody) => {
+	const full = `${BASE_URL}/${url}`
+	const options = {
+		method: 'POST',
+		body: JSON.stringify(body),
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	}
+
+	fetch(full, options)
+}
+
 export const raid = {
 	assign: async (clan: Clan, data: RaidTeams) => {
-		return await instance.post(clans[clan], formatBody(clan, data))
+		return await post(clans[clan], formatBody(clan, data))
 	},
 	async test(data: RaidTeams) {
 		return instance.post(TEST, formatBody('magic', data))
