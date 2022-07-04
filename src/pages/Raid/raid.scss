@@ -1,0 +1,14 @@
+@import '../../styles/index.scss';
+
+.raids {
+    padding: 0 $padding-base;
+    text-align: center;
+    // background-image: url('/assets/raid_6.jpg');
+    // z-index: 2;
+
+    .map {
+        position: absolute;
+        left: $side-nav-width;
+        
+    }
+}

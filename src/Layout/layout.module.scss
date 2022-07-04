@@ -1,0 +1,22 @@
+// $width: 280px;
+@import '../styles/index.scss';
+
+.layout-container {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    background-color: transparent;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+
+    .nav-container {
+        width: $side-nav-width + $side-nav-width-compressed;
+    }
+
+    .content-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}

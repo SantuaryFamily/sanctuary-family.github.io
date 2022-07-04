@@ -1,0 +1,21 @@
+@import '../../styles/index.scss';
+
+.welcome {
+    padding: 0 $padding-base;
+    text-align: center;
+
+    a {
+        color: $text-color;
+        text-decoration: none;
+
+        &:active,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    .playkot {
+        top: 50px;
+    }
+
+}
