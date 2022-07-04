@@ -1,9 +1,9 @@
-import { formatTeams } from './../utils/index'
+import { formatTeams, toTitleCase } from './../utils/index'
 import axios from 'axios'
 import { RaidTeams } from '../pages/Raid/components/TeamInputs'
+import { Clan, clans, TEST } from './clanWebHooks'
 
 const BASE_URL = 'https://discord.com/api/webhooks'
-const Test = '993372920770478090/mQza6kzBdMl5nWTIFgYDrfUJWYCC8ApgI2sVPcp64wMfJNTmcefBcBd6iIsU5XE4D5QG'
 
 // axios.defaults.headers.post['Content-Type'] = 'application/json';
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
@@ -17,12 +17,12 @@ const instance = axios.create({
 instance.defaults.headers.post['Content-Type'] = 'application/json'
 
 export const raid = {
-	async magic(data: RaidTeams) {
-		return instance.post(Test, formatBody(data))
+	assign: async (clan: Clan, data: RaidTeams) => {
+		return await instance.post(clans[clan], formatBody(clan, data))
 	},
-	// async dragon(data: any) {
-	// 	return instance.post(MAGIC, { content: JSON.stringify(data) })
-	// },
+	async test(data: RaidTeams) {
+		return instance.post(TEST, formatBody('magic', data))
+	},
 }
 
 type MentionType = 'roles' | 'users' | 'everyone'
@@ -49,11 +49,11 @@ type WebhookBody = {
 	thread_name?: string //name of thread to create (requires the webhook channel to be a forum channel)
 }
 
-const formatBody = (data: RaidTeams): WebhookBody => {
+const formatBody = (clan: Clan, data: RaidTeams): WebhookBody => {
 	const formatted = formatTeams(data)
 	return {
 		content: formatted,
-		username: 'Magic',
+		username: toTitleCase(clan),
 		allowed_mentions: {
 			parse: [],
 		},

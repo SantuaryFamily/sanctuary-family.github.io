@@ -24,7 +24,7 @@ export const Raid = () => {
 					actions.setSubmitting(true)
 					const hasValue = validate(values)
 					if (hasValue) {
-						raid.magic(values)
+						raid.test(values)
 							.then((res) => {
 								console.log('response', res)
 								actions.resetForm()

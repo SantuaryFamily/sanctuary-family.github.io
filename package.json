@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "formik": "^2.2.9",
+    "gh-pages": "^4.0.0",
     "node-sass": "^7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -28,6 +29,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
